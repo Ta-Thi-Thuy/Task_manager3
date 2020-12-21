@@ -38,10 +38,11 @@ class TaskController extends Controller
      */
     public function store(Request $request)
     {
+//        dd($request);
         $task = new Task();
         $task->title = $request->inputTitle;
         $task->content = $request->inputContent;
-        $task->due_date = $request->inputDueDate;
+        $task->due_date = $request->year."/".$request->month."/".$request->date;
 
         $file = $request->inputFile;
         if (!$request->hasFile('inputFile')){
@@ -100,8 +101,6 @@ class TaskController extends Controller
 //        $task->title = $request->title;
 //        $task->content = $request->content;
 //        $task->due_date = $request->due_date;
-
-
         $file = $request->inputFile;
 
         if (!$request->hasFile('inputFile')){
@@ -116,7 +115,6 @@ class TaskController extends Controller
 
         }
         $task->save();
-
         return redirect()->route('tasks.index');
     }
 

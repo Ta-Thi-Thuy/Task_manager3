@@ -13,16 +13,16 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css">
 </head>
 <body>
-<div class="flex-center position-ref full-height">
+<div class="container">
     <div class="content">
-        <div class="title m-b-md">
+        <div style="font-size: 50px; background-color: #bd2130; text-align: center" class="title m-b-md">
             Tasks List
         </div>
 
         @if(!isset($tasks))
             <h5 class="text-primary">Dữ liệu không tồn tại!</h5>
         @else
-            <table class="table table-bordered">
+            <table style="font-size: 25px" class="table table-bordered">
                 <thead>
                 <tr>
                     <th scope="col">#</th>
@@ -31,6 +31,7 @@
                     <th scope="col">Created</th>
                     <th scope="col">Due Date</th>
                     <th scope="col">Img</th>
+                    <th scope="col"></th>
                     <th scope="col"></th>
 
                 </tr>
